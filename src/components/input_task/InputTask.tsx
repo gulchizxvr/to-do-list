@@ -1,10 +1,10 @@
-import {FC, useState} from "react"
+import React, {FC, useState} from "react"
 import {useAppDispatch} from "../../hooks/redux.hooks"
 import {taskActions} from "../../redux/slices/task.slice"
-import {getIdTask} from "./helper/getIdTask"
+import {getIdTask} from "./helpers/getIdTask"
 import {StyledInputTask} from "./styled/StyledInputTask"
 import { ReactComponent as Add } from "../../icons/plus.svg"
-import {charactersLimit} from "./helper/charactersLimit"
+import {charactersLimit} from "./helpers/charactersLimit"
 
 
 export const InputTask: FC = () => {
@@ -24,13 +24,16 @@ export const InputTask: FC = () => {
 
   return <StyledInputTask>
     <div className="input-area">
-      {/* eslint-disable-next-line @typescript-eslint/explicit-function-return-type */}
-      <textarea placeholder={'Enter description'} value={taskDescription} onChange={e => {
+      <textarea placeholder={'Enter description'} value={taskDescription} onChange={(e : React.ChangeEvent<HTMLTextAreaElement>): void => {
         setTaskDescription(e.target.value)
       }}/>
-      <div>Available characters: {100 - taskDescription.length}/100</div>
-    </div>
 
-    {charactersLimit(taskDescription) && <div className="submit-additing" onClick={(): void => {addTask()}}><Add/></div>}
+
+      <div className="submit-additing" onClick={(): void => {addTask()}}>
+        {charactersLimit(taskDescription) && <Add/>}
+      </div>
+
+    </div>
+    <div className="tips">Available characters: {100 - taskDescription.length}/100</div>
   </StyledInputTask>
 }

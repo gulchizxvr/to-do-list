@@ -9,11 +9,11 @@ export const StyledFilters = styled.div`
     align-items: center;
     .filter{
         flex: 1;
-        border: 1px solid black;
-        background-color: azure;
+        box-shadow: 0 0 2px black;
         padding: 20px;
         transition: background-color 0.6s ease;
         border-radius: 10px;
+        font-size: 20px;
 
         &.active {
             background-color: black;

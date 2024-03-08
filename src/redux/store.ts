@@ -3,8 +3,7 @@ import {taskReducer} from "./slices/task.slice"
 
 const rootReducer = combineReducers({taskReducer})
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-const setupStore = () => configureStore({reducer: rootReducer})
+const setupStore = () : ReturnType<typeof configureStore> => configureStore({reducer: rootReducer})
 
 type RootState = ReturnType<typeof rootReducer>
 type AppStore = ReturnType<typeof setupStore>

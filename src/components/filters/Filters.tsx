@@ -14,6 +14,6 @@ export const Filters: FC<IFilters> = ({tasks, filterConfig}) => {
 
   return <StyledFilters>
     {taskFilters(tasks).map((filter, index) => {
-      return <div className={`filter ${chosenFilter(filter.status)}`} key={index} onClick={(): void => filterConfig.setFilter(filter.status)}>{filter.label} {filter.count}</div>})}
+      return <div className={`filter ${chosenFilter(filter.status)}`} key={index} onClick={(): void => filterConfig.setFilter(filter.status)}>{filter.label} - {filter.count}</div>})}
   </StyledFilters>
 }

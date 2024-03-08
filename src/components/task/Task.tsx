@@ -11,13 +11,6 @@ export const Task: FC<ITask> = ({id, description, isComplete}) => {
 
   const dispatch = useAppDispatch()
 
-
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  // console.log(isComplete)
-
-
   return <StyledTask isCompleted={isComplete}>
 
     <DescriptionLabel description={description} id={id} dispatch={dispatch}/>
