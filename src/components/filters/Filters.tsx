@@ -1,7 +1,7 @@
 import React, {FC} from "react"
 import {StyledFilters} from "./styled/StyledFilters"
 import {IFilters} from "../../interfaces/filters.interface"
-import {taskFilters} from "../../pages/home/helpers/getFilter"
+import {taskFilters} from "./helpers/getFilter"
 
 export const Filters: FC<IFilters> = ({tasks, filterConfig}) => {
 

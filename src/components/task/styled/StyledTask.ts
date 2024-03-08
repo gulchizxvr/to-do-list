@@ -27,13 +27,24 @@ export const StyledTask = styled.div<{ isCompleted: boolean }>`
         font-weight: 600;
     }
 
-    .icon {
+    .button {
         width: 50px;
         height: 50px;
 
         :hover {
             background-color: lightgray;
             border-radius: 5px;
+        }
+        .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 10px;
+
+            svg {
+                width: 40px;
+                height: 40px;
+            }
         }
     }
 `
